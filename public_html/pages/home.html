@@ -1,0 +1,50 @@
+
+
+<section id="app" ng-init="indexCtrl.loadInit()" class="content-header" >
+    <div class="container">
+        <div class="row">            
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">                                
+                                <input type="text" class="form-control"                            
+                                       ng-model="indexCtrl.query" 
+                                       placeholder="Digite aqui para filtrar o resultado">                               
+                            </div> 
+                        </div>
+
+                        <div class="col-md-offset-1 col-md-3">
+                            <h4 class="text-left"> Mídias cadastradas</h4>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="panel-body">         
+
+
+                    <div class="menu-item-info-box"  ng-repeat="timeLine in indexCtrl.arrayTimeLine| filter : indexCtrl.query">
+                        <span class="menu-item-info-box-icon"><img src="{{timeLine.file}}"></span>
+
+                        <div class="menu-item-info-box-content">
+                            <span class="menu-item-info-box-text">{{timeLine.title}}</span>
+                            <span class="menu-item-info-box-detail">{{timeLine.description}}</span>
+                            <span class="menu-item-info-box-price">Categoria: {{timeLine.category}}</span>     
+                            <span style="color: #00acd6 " class="menu-item-info-box-detail">Tipo: {{timeLine.type}} </span>  
+
+                        </div>           
+                    </div>                                   
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
